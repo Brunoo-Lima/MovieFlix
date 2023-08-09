@@ -34,6 +34,24 @@ const Movie = () => {
     };
   }, [id, navigate]);
 
+  function saveMovie() {
+    const myList = localStorage.getItem('@movieflix');
+    let movieSaves = JSON.parse(myList) || [];
+
+    const hasMovieSave = movieSaves.some(
+      (movieSave) => movieSave.id === movie.id
+    );
+
+    if (hasMovieSave) {
+      alert('ESSE FILME JÁ ESTÁ NA LISTA!');
+      return;
+    }
+
+    movieSaves.push(movie);
+    localStorage.setItem('@movieflix', JSON.stringify(movieSaves));
+    alert('FILME SALVO COM SUCESSO!');
+  }
+
   if (loading) return <Loading />;
   return (
     <div className="movie-info container">
@@ -49,11 +67,13 @@ const Movie = () => {
       </div>
 
       <div className="area-btn">
-        <button className="btn-save">Salvar</button>
+        <button className="btn-save" onClick={saveMovie}>
+          Salvar
+        </button>
         <button className="btn-trailer">
           <a
             href={`https://youtube.com/results?search_query=${movie.title} Trailer`}
-            target="_blank"
+            target="blank"
             rel="external noreferrer"
           >
             Trailer
