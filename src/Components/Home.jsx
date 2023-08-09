@@ -26,7 +26,7 @@ const Home = () => {
   if (loading) return <Loading />;
 
   return (
-    <section className="container">
+    <section className=" container">
       <div className="list-movies">
         {movies.map((movie) => (
           <article key={movie.id}>
