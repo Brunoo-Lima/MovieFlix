@@ -40,7 +40,7 @@ const Movie = () => {
     let movieSaves = JSON.parse(myList) || [];
 
     const hasMovieSave = movieSaves.some(
-      (movieSave) => movieSave.id === movie.id
+      (movieSave) => movieSave.id === movie.id,
     );
 
     if (hasMovieSave) {
@@ -53,35 +53,40 @@ const Movie = () => {
     toast.success('FILME SALVO COM SUCESSO!');
   }
 
-  if (loading) return <Loading />;
   return (
-    <div className="movie-info container">
-      <h1>{movie.title}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-        alt={movie.title}
-      />
-      <div>
-        <h3>Sinopse</h3>
-        <p>{movie.overview}</p>
-        <strong>{movie.vote_average} /10</strong>
-      </div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="movie-info container">
+          <h1>{movie.title}</h1>
+          <img
+            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+            alt={movie.title}
+          />
+          <div>
+            <h3>Sinopse</h3>
+            <p>{movie.overview}</p>
+            <strong>{movie.vote_average} /10</strong>
+          </div>
 
-      <div className="area-btn">
-        <button className="btn-save" onClick={saveMovie}>
-          Salvar
-        </button>
-        <button className="btn-trailer">
-          <a
-            href={`https://youtube.com/results?search_query=${movie.title} Trailer`}
-            target="blank"
-            rel="external noreferrer"
-          >
-            Trailer
-          </a>
-        </button>
-      </div>
-    </div>
+          <div className="area-btn">
+            <button className="btn-save" onClick={saveMovie}>
+              Salvar
+            </button>
+            <button className="btn-trailer">
+              <a
+                href={`https://youtube.com/results?search_query=${movie.title} Trailer`}
+                target="blank"
+                rel="external noreferrer"
+              >
+                Trailer
+              </a>
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

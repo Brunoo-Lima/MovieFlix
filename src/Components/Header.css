@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .header-bg {
-  padding: 16px;
+  padding: 1rem;
   background-color: #000000;
   position: fixed;
   z-index: 999;
@@ -18,13 +20,12 @@
 }
 
 .logo-movie {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans';
+  font-family: 'Orbitron', sans-serif;
   color: #e24;
 }
 
 .menu {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }

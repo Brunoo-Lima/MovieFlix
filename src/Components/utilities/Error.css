@@ -4,22 +4,22 @@
   align-items: center;
   height: calc(60vh);
   width: 100%;
-  margin-top: 120px;
+  margin-top: 7.5rem;
 }
 
 .notFound h1 {
-  font-size: 120px;
+  font-size: 7.5rem;
 }
 
 .notFound h2 {
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
 }
 
 .notFound a {
   display: block;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #ffffff;
   background-color: #e24;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
 }

@@ -1,16 +1,16 @@
 .myMovieFavorites {
-  margin-top: 24px;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .myMovieFavorites h1 {
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
 }
 
 .myMovieFavorites span {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .myMovieFavorites ul {
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
 }
 
 .myMovieFavorites div {
@@ -32,5 +32,5 @@
 
 .myMovieFavorites div a {
   color: #116feb;
-  margin-right: 14px;
+  margin-right: 0.875rem;
 }

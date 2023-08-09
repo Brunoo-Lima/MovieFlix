@@ -18,38 +18,41 @@ const Home = () => {
         },
       });
       setMovies(response.data.results);
-      console.log(response.data);
       setLoading(false);
     }
     loadMovies();
   }, []);
 
-  if (loading) return <Loading />;
-
   return (
-    <section className="home-movies container">
-      <div className="list-movies">
-        {movies.map((movie) => (
-          <Link key={movie.id} to={`/filme/${movie.id}`}>
-            <article>
-              <img
-                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                alt={movie.title}
-              />
-              <h1>{movie.title}</h1>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <section className="home-movies container">
+          <div className="list-movies">
+            {movies.map((movie) => (
+              <Link key={movie.id} to={`/filme/${movie.id}`}>
+                <article>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <h1>{movie.title}</h1>
 
-              <div className="average">
-                {/* <p>{movie.release_date}</p> */}
-                <strong>
-                  <span className="star">⭐</span>
-                  {movie.vote_average}/10
-                </strong>
-              </div>
-            </article>
-          </Link>
-        ))}
-      </div>
-    </section>
+                  <div className="average">
+                    {/* <p>{movie.release_date}</p> */}
+                    <strong>
+                      <span className="star">⭐</span>
+                      {movie.vote_average}/10
+                    </strong>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 
