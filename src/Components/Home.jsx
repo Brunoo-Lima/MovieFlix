@@ -40,7 +40,7 @@ const Home = () => {
               <Link to={`/filme/${movie.id}`}>Acessar</Link>
               <strong>
                 <span className="star">⭐</span>
-                {movie.vote_average} /10
+                {movie.vote_average}/10
               </strong>
             </div>
           </article>
