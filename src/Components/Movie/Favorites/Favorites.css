@@ -1,0 +1,36 @@
+.myMovieFavorites {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myMovieFavorites h1 {
+  margin-bottom: 14px;
+}
+
+.myMovieFavorites span {
+  font-size: 18px;
+}
+
+.myMovieFavorites ul {
+  width: 720px;
+}
+
+.myMovieFavorites ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.myMovieFavorites div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myMovieFavorites div a {
+  color: #116feb;
+  margin-right: 14px;
+}
