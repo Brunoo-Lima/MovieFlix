@@ -1,0 +1,41 @@
+.list-movies {
+  max-width: 300px;
+  margin: 14px auto;
+}
+
+.list-movies article {
+  width: 100%;
+  background-color: #000000;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.list-movies h1 {
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 22px;
+  display: block;
+}
+
+.list-movies img {
+  width: 300px;
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.list-movies a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: #116feb;
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 10px;
+  border-radius: 8px;
+}
