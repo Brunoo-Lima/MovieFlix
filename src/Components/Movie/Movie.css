@@ -1,3 +1,62 @@
-.title {
+.movie-info {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 0 8px;
   color: #fff;
+}
+
+.movie-info .title {
+  margin: 14px 0;
+  width: 800px;
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+}
+
+.movie-info h3 {
+  margin-top: 14px;
+}
+
+.movie-info span {
+  margin: 8px 0;
+}
+
+.movie-info strong {
+  margin-top: 8px;
+}
+
+.area-btn button {
+  margin: 14px 12px 14px 0;
+  font-size: 20px;
+  border: 0;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.btn-save {
+  background-color: #1b5c3e;
+}
+
+.btn-save:hover {
+  background-color: #2e8d61;
+}
+
+.btn-trailer {
+  background-color: #e24;
+}
+
+.btn-trailer:hover {
+  background-color: #be2d45;
+}
+
+.btn-trailer a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.5s;
 }

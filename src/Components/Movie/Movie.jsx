@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../Services/api';
+import './Movie.css';
 
 const Movie = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const Movie = () => {
         .get(`/movie/${id}`, {
           params: {
             api_key: '12a8ab1e01e0fc409c8aa416542ac371',
-            language: 'en',
+            language: 'pt-BR',
           },
         })
         .then((response) => {
@@ -47,9 +48,15 @@ const Movie = () => {
       <div>
         <h3>Sinopse</h3>
         <p>{movie.overview}</p>
+        <strong>{movie.vote_average} /10</strong>
       </div>
 
-      <strong>{movie.vote_average} /10</strong>
+      <div className="area-btn">
+        <button className="btn-save">Salvar</button>
+        <button className="btn-trailer">
+          <a href="#">Trailer</a>
+        </button>
+      </div>
     </div>
   );
 };
