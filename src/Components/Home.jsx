@@ -26,16 +26,23 @@ const Home = () => {
   if (loading) return <Loading />;
 
   return (
-    <section className=" container">
+    <section className="home-movies container">
       <div className="list-movies">
         {movies.map((movie) => (
           <article key={movie.id}>
-            <h1>{movie.title}</h1>
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt={movie.title}
             />
-            <Link to={`/filme/${movie.id}`}>Acessar</Link>
+            <h1>{movie.title}</h1>
+
+            <div className="btn-average">
+              <Link to={`/filme/${movie.id}`}>Acessar</Link>
+              <strong>
+                <span className="star">⭐</span>
+                {movie.vote_average} /10
+              </strong>
+            </div>
           </article>
         ))}
       </div>

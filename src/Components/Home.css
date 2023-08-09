@@ -1,41 +1,77 @@
+.home-movies {
+  display: flex;
+  margin: auto;
+}
+
 .list-movies {
-  max-width: 300px;
   margin: 14px auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 500px));
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .list-movies {
+    grid-template-columns: repeat(2, minmax(300px, 500px));
+  }
+}
+
+@media (max-width: 700px) {
+  .list-movies {
+    grid-template-columns: 1fr;
+  }
 }
 
 .list-movies article {
   width: 100%;
+  height: 520px;
   background-color: #000000;
   padding: 15px;
   border-radius: 4px;
   margin: 6px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .list-movies h1 {
-  margin-bottom: 14px;
+  margin: 10px 0;
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   display: block;
 }
 
 .list-movies img {
-  width: 300px;
-  max-width: 100%;
-  max-height: 400px;
-  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  object-fit: fill;
   display: block;
   border-radius: 4px;
+  position: relative;
 }
 
-.list-movies a {
+.btn-average {
+  position: absolute;
+  bottom: 10px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  gap: 10px;
+}
+
+.btn-average .star {
+  font-size: 18px;
+}
+
+.btn-average a {
+  padding: 10px 50px;
   font-size: 16px;
   background-color: #116feb;
   text-decoration: none;
   color: #ffffff;
-  margin-top: 10px;
   border-radius: 8px;
 }
