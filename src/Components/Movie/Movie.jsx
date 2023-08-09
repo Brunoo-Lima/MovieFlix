@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../Services/api';
 import './Movie.css';
 import Loading from '../utilities/Loading';
 
 const Movie = () => {
   const { id } = useParams();
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadMovie() {
@@ -23,14 +24,15 @@ const Movie = () => {
           setLoading(false);
         })
         .catch(() => {
-          console.log('NAO ENCONTRADO');
+          navigate('/', { replace: true });
+          return;
         });
     }
     loadMovie();
     return () => {
       console.log('COMPONENTE FOI DESMONTADO');
     };
-  }, []);
+  }, [id, navigate]);
 
   if (loading) return <Loading />;
   return (
@@ -49,7 +51,13 @@ const Movie = () => {
       <div className="area-btn">
         <button className="btn-save">Salvar</button>
         <button className="btn-trailer">
-          <a href="#">Trailer</a>
+          <a
+            href={`https://youtube.com/results?search_query=${movie.title} Trailer`}
+            target="_blank"
+            rel="external noreferrer"
+          >
+            Trailer
+          </a>
         </button>
       </div>
     </div>
