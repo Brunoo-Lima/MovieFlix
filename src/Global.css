@@ -28,3 +28,7 @@ body {
   max-width: 1200px;
   margin: auto;
 }
+
+.toast {
+  z-index: 1000;
+}

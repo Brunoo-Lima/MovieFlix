@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import api from '../Services/api';
 import './Movie.css';
 import Loading from '../utilities/Loading';
+import { toast } from 'react-toastify';
 
 const Movie = () => {
   const { id } = useParams();
@@ -43,13 +44,13 @@ const Movie = () => {
     );
 
     if (hasMovieSave) {
-      alert('ESSE FILME JÁ ESTÁ NA LISTA!');
+      toast.warn('ESSE FILME JÁ ESTÁ NA LISTA!');
       return;
     }
 
     movieSaves.push(movie);
     localStorage.setItem('@movieflix', JSON.stringify(movieSaves));
-    alert('FILME SALVO COM SUCESSO!');
+    toast.success('FILME SALVO COM SUCESSO!');
   }
 
   if (loading) return <Loading />;
