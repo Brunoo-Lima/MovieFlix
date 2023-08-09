@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
 body {
   font-family: sans-serif;
   background-color: #111111ef;
@@ -15,4 +24,11 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding-top: 102px;
+}
+
+.container {
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: auto;
 }

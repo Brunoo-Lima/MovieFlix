@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../Services/api';
 import './Movie.css';
+import Loading from '../utilities/Loading';
 
 const Movie = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const Movie = () => {
         })
         .then((response) => {
           setMovie(response.data);
-          //setLoading(false);
+          setLoading(false);
         })
         .catch(() => {
           console.log('NAO ENCONTRADO');
@@ -31,15 +32,9 @@ const Movie = () => {
     };
   }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <h1>Carregando detalhes....</h1>
-  //     </div>
-  //   );
-  // }
+  if (loading) return <Loading />;
   return (
-    <div className="movie-info">
+    <div className="movie-info container">
       <h1>{movie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}

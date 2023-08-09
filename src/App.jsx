@@ -2,16 +2,20 @@ import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Movie from './Components/Movie/Movie';
 import Header from './Components/Header';
+import Error from './Components/utilities/Error';
 
 const App = () => {
   return (
-    <div className="app">
+    <div>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/filme/:id" element={<Movie />} />
-        </Routes>
+        <main className="app">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/filme/:id" element={<Movie />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
