@@ -64,10 +64,15 @@ const Movie = () => {
             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
             alt={movie.title}
           />
-          <div>
+          <div className="movie-details">
             <h3>Sinopse</h3>
             <p>{movie.overview}</p>
-            <strong>{movie.vote_average} /10</strong>
+            <p>
+              Avaliação:{' '}
+              <span className="average-movie">
+                {movie.vote_average.toFixed(1)} /10
+              </span>
+            </p>
           </div>
 
           <div className="area-btn">

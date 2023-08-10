@@ -30,10 +30,23 @@ const Favorites = () => {
       <ul>
         {movie.map((movieList) => (
           <li key={movieList.id}>
-            <span>{movieList.title}</span>
+            <img
+              className="img-favorites"
+              src={`https://image.tmdb.org/t/p/original/${movieList.poster_path}`}
+              alt=""
+            />
+            <span className="title-movie">{movieList.title}</span>
+
             <div>
-              <Link to={`/filme/${movieList.id}`}>Ver detalhes</Link>
-              <button onClick={() => deleteMovie(movieList.id)}>Excluir</button>
+              <Link className="link" to={`/filme/${movieList.id}`}>
+                Ver detalhes
+              </Link>
+              <button
+                className="btn-delete"
+                onClick={() => deleteMovie(movieList.id)}
+              >
+                Excluir
+              </button>
             </div>
           </li>
         ))}

@@ -6,15 +6,42 @@
 }
 
 .myMovieFavorites h1 {
-  margin-bottom: 0.875rem;
+  margin-bottom: 2rem;
 }
 
-.myMovieFavorites span {
+.img-favorites {
+  display: block;
+  width: fit-content;
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .myMovieFavorites .img-favorites {
+    max-width: fill;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.myMovieFavorites .title-movie {
   font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .myMovieFavorites .title-movie {
+    margin-top: 5px;
+    padding: 0 0.5rem;
+  }
 }
 
 .myMovieFavorites ul {
   width: 720px;
+}
+
+@media (max-width: 768px) {
+  .myMovieFavorites ul {
+    width: 350px;
+  }
 }
 
 .myMovieFavorites ul li {
@@ -22,6 +49,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.875rem;
+  border-bottom: 1px solid #cecece;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .myMovieFavorites ul li {
+    flex-direction: column;
+  }
 }
 
 .myMovieFavorites div {
@@ -30,7 +65,31 @@
   align-items: center;
 }
 
-.myMovieFavorites div a {
+@media (max-width: 768px) {
+  .myMovieFavorites div {
+    margin-top: 10px;
+  }
+}
+
+.myMovieFavorites .link {
   color: #116feb;
   margin-right: 0.875rem;
+  font-size: 1.125rem;
+}
+
+.myMovieFavorites div a:hover {
+  color: #116feba4;
+}
+
+.btn-delete {
+  font-size: 1rem;
+  background: none;
+  color: #e54;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: #e30;
 }

@@ -43,7 +43,7 @@ const Home = () => {
                     {/* <p>{movie.release_date}</p> */}
                     <strong>
                       <span className="star">⭐</span>
-                      {movie.vote_average}/10
+                      {movie.vote_average.toFixed(1)}/10
                     </strong>
                   </div>
                 </article>
