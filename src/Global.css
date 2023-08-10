@@ -17,10 +17,13 @@ body {
   font-family: sans-serif;
   background-image: linear-gradient(90deg, rgb(62 17 96), rgb(3 3 40));
   color: #ffff;
+  position: relative;
+  min-height: 100vh;
 }
 
 .app {
   padding-top: 6.375rem;
+  padding-bottom: 6.375rem;
 }
 
 .container {

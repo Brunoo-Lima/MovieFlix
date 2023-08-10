@@ -6,6 +6,7 @@ import Error from './Components/utilities/Error';
 import Favorites from './Components/Movie/Favorites/Favorites';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
+        <Footer />
       </BrowserRouter>
     </div>
   );
